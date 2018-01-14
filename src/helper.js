@@ -113,6 +113,12 @@ function setHome(newPath) {
 	} else {
 		this.config.theme = `themes/${this.config.theme}.css`;
 	}
+
+	if (this.config.leaveMessage.includes("thelounge.github.io")) {
+		log.warn(`The ${colors.green("leaveMessage")} option in your configuration file refers to The Lounge's website former URL.`);
+		log.warn("You may wish to change it to:");
+		log.warn(colors.bold(`leaveMessage: "${require("../defaults/config").leaveMessage}"`));
+	}
 }
 
 function getHomePath() {
