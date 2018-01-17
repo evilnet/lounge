@@ -16,7 +16,7 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version
   - yarn
-  - yarn run build
+  - yarn build
   - yarn add mocha-appveyor-reporter
   - echo --reporter mocha-appveyor-reporter >> test/mocha.opts
 
